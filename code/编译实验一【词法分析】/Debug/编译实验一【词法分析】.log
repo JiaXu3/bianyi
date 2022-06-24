@@ -1,0 +1,9 @@
+﻿  analyze.cpp
+D:\课程文档\编译技术\课设\课设4校对版\SLR-compiler\code\编译实验一【词法分析】\analyze.cpp(769,5): warning C4102: “erro”: 未引用的标签
+D:\课程文档\编译技术\课设\课设4校对版\SLR-compiler\code\编译实验一【词法分析】\analyze.cpp(1066,6): warning C4102: “erro”: 未引用的标签
+D:\课程文档\编译技术\课设\课设4校对版\SLR-compiler\code\编译实验一【词法分析】\analyze.cpp(1410,6): warning C4102: “erro”: 未引用的标签
+D:\课程文档\编译技术\课设\课设4校对版\SLR-compiler\code\编译实验一【词法分析】\analyze.cpp(1237,8): warning C4101: “temm”: 未引用的局部变量
+D:\课程文档\编译技术\课设\课设4校对版\SLR-compiler\code\编译实验一【词法分析】\analyze.cpp(397): warning C4715: “analyze::changeStackB”: 不是所有的控件路径都返回值
+D:\课程文档\编译技术\课设\课设4校对版\SLR-compiler\code\编译实验一【词法分析】\analyze.cpp(1142): warning C4715: “analyze::lrparse3”: 不是所有的控件路径都返回值
+D:\课程文档\编译技术\课设\课设4校对版\SLR-compiler\code\编译实验一【词法分析】\analyze.cpp(1484): warning C4715: “analyze::lrparse”: 不是所有的控件路径都返回值
+  编译实验一【词法分析】.vcxproj -> D:\课程文档\编译技术\课设\课设4校对版\SLR-compiler\code\Debug\编译实验一【词法分析】.exe
