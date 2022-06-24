@@ -375,10 +375,18 @@ string analyze::changeStackB(int sy,int zhong){
 		switch (sy){
 		case s_if:
 			return "if";
+		case s_then:
+			return "then";
 		case s_else:
 			return "else";
 		case s_while:
 			return "while";
+		case s_begin:
+			return "begin";
+		case s_do:
+			return "do";
+		case s_end:
+			return "end";
 		case suanshu:
 			return "a";
 		case fenhao:
@@ -1163,7 +1171,7 @@ int analyze::lrparse(){//程序语句的分析
 
 	lr = action[stack[sp].status][conv(buf[ii])];  //查表
 	
-	if ((lr >= 0) && (lr < 18))
+	if ((lr >= 0) && (lr <= 18))
 	{
 		showZhan(lr);
 		{
@@ -1238,11 +1246,11 @@ int analyze::lrparse(){//程序语句的分析
 			//case 100://S'->B
 
 			//	break;
-		case 101://S->if e S else S
+		case 101://S->if e S else S //S->if e then S else S
 			
 			showZhan(lr);
-			sp = sp - 5;
-			cout << "\n用S->if e S else S规约";
+			sp = sp - 6;
+			cout << "\n用S->if e then S else S规约";
 			//showZhan();
 			fexp[labeltemp[pointtemp]].result = nxq;
 			pointtemp--;
@@ -1270,11 +1278,11 @@ int analyze::lrparse(){//程序语句的分析
 			//stack[sp].b = { -1, 0 };
 
 			break;
-		case 102://S->while e S
+		case 102://S->while e S //while e do S
 
 			showZhan(lr);
-			sp = sp - 3;
-			cout << "\n用S->while e S规约";
+			sp = sp - 4;
+			cout << "\n用S->while e do S规约";
 			//showZhan();
 			
 			pointmark--;
@@ -1300,11 +1308,11 @@ int analyze::lrparse(){//程序语句的分析
 			//stack[sp].b = { -1, 0 };
 
 			break;
-		case 103://S->{L}
+		case 103://S->begin L end
 
 			showZhan(lr);
 			sp = sp - 3;
-			cout << "\n用S->{L}规约";
+			cout << "\n用begin L end规约";
 			//showZhan();
 			
 			if (stack[sp - 1].danci.num == s_if){
@@ -1356,11 +1364,11 @@ int analyze::lrparse(){//程序语句的分析
 			//stack[sp].b = { -1, 0 };
 
 			break;
-		case 105://L->SL
+		case 105://L->S;L
 
 			showZhan(lr);
-			sp = sp - 2;
-			cout << "\n用L->SL规约";
+			sp = sp - 3;
+			cout << "\n用L->S;L规约";
 			//showZhan();
 
 			lrt = action[stack[sp].status][L];

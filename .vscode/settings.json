@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "xlocnum": "cpp",
+        "xutility": "cpp",
+        "atomic": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "new": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "xmemory": "cpp",
+        "xstring": "cpp"
+    }
+}
